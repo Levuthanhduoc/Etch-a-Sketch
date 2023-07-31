@@ -1,0 +1,30 @@
+html{
+    --div-box-height:26px;
+    --div-box-width:26px
+}
+body{
+    display: flex;
+    padding: 0;
+}
+.grid{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 100px;
+    width: 523px; /**33*/
+    height: 523px;
+    border: black solid 1px;
+    gap:5px;
+}
+button{
+    height:var(--div-box-height) ;
+    width: var(--div-box-width);
+}
+.grid > div {
+    height:var(--div-box-height) ;
+    width: var(--div-box-width);
+    border: black solid 1px;
+}
+.hovering {
+    background-color: black;
+}
