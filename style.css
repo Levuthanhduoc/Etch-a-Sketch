@@ -1,6 +1,7 @@
 html{
-    --div-box-height:26px;
-    --div-box-width:26px
+    --div-box-height:40px;
+    --div-box-width:40px;
+    --div-box-small:47px;/**39*/
 }
 body{
     display: flex;
@@ -11,19 +12,17 @@ body{
     flex-direction: row;
     flex-wrap: wrap;
     margin-left: 100px;
-    width: 523px; /**33*/
-    height: 523px;
+    width: 800px;
     border: black solid 1px;
-    gap:5px;
 }
 button{
     height:var(--div-box-height) ;
     width: var(--div-box-width);
 }
 .grid > div {
-    height:var(--div-box-height) ;
-    width: var(--div-box-width);
-    border: black solid 1px;
+    flex: 1 1 40px 40px;
+    background-color: black;
+
 }
 .hovering {
     background-color: black;
