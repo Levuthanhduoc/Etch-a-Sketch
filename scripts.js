@@ -50,11 +50,13 @@ function notRound(number){
     return number; 
 }
 function expandGrid(number){
-    let box = (800/(16 + number)).toString() ;
-    box = notRound(box);
-    console.log(box);
+    let box = (800/(16 + number));
+    box = notRound(box.toString());
+    let bigbox = (16 + number) * box +0.5;
+    bigbox = bigbox + "px";
     box = box + "px";
     let elements = gridLocation.querySelectorAll("div");
+    gridLocation.style.width = bigbox;
     elements.forEach(element =>{
         element.style.width = box;
         element.style.height = box;
