@@ -1,4 +1,5 @@
 let gridLocation = document.querySelector(".grid");
+let darkening = 0;
 document.querySelector(".add").addEventListener("click",(e)=>{
     main(getUserNumber());
 })
@@ -10,9 +11,24 @@ function addListener(){
     let elements = gridLocation.querySelectorAll("div");
     elements.forEach(elm => {
         elm.addEventListener("mouseover",(e)=>{
-            elm.classList.add("hovering")
+            elm.style.backgroundColor = randomColor();
+            darkening += 1.6;
         })
     });
+}
+function randomHexadecimal(){
+    if(darkening >= 16){
+        return "0";
+    }
+    let randomNumber = Math.floor(Math.random()*(16 - darkening));
+    return randomNumber.toString(16);
+}
+function randomColor(){
+    let hexadecimal ="";
+    for(let i = 0; i < 6 ;i++){
+        hexadecimal += randomHexadecimal()
+    }
+    return "#" + hexadecimal;
 }
 function cleanDiv(){
     let removeLocation = gridLocation.querySelectorAll("div");
@@ -63,6 +79,7 @@ function expandGrid(number){
     })
 }
 function main(){
+    darkening = 0;
     let usernumber = Number(arguments[0]);
     let cloneNumber = (16+usernumber) * (16+usernumber);
     cleanDiv();
